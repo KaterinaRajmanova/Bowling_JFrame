@@ -5,13 +5,14 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "insets rel,hidemode 3"
-			"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+			"$columnConstraints": "[51,fill][48,fill][fill][fill][21,fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
 			"$rowConstraints": "[fill][][][][][][][][][][][][][][][][][][][][][]"
 		} ) {
 			name: "this"
 			"defaultCloseOperation": 2
 			"title": "Bowling_JFrame"
 			"$locationPolicy": 1
+			"$sizePolicy": 1
 			auxiliary() {
 				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
 			}
@@ -35,47 +36,47 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_hod2_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 1"
+				"value": "cell 4 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_hod3_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 1"
+				"value": "cell 5 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod4_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 1"
+				"value": "cell 6 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod5_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 1"
+				"value": "cell 7 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod6_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 1"
+				"value": "cell 8 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod7_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 1"
+				"value": "cell 9 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod8_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 1"
+				"value": "cell 10 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod9_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 1"
+				"value": "cell 11 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod10_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 1"
+				"value": "cell 12 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHod2"
@@ -94,47 +95,47 @@ new FormModel {
 					"JavaCodeGenerator.variableName": "LabHrac2_hod2_2"
 				}
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 2"
+				"value": "cell 4 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_hod3_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 2"
+				"value": "cell 5 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod4_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 2"
+				"value": "cell 6 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod5_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 2"
+				"value": "cell 7 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod6_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 2"
+				"value": "cell 8 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod7_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 2"
+				"value": "cell 9 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod8_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 2"
+				"value": "cell 10 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod9_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 2"
+				"value": "cell 11 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LagHrac1_hod10_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 2"
+				"value": "cell 12 2"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabSkore"
@@ -150,47 +151,47 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 3"
+				"value": "cell 4 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H3"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 3"
+				"value": "cell 5 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H4"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 3"
+				"value": "cell 6 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H5"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 3"
+				"value": "cell 7 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H6"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 3"
+				"value": "cell 8 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H7"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 3"
+				"value": "cell 9 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H8"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 3"
+				"value": "cell 10 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H9"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 3"
+				"value": "cell 11 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac1_Skore_H10"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 3"
+				"value": "cell 12 3"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2"
@@ -212,47 +213,47 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod2_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 5"
+				"value": "cell 4 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod3_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 5"
+				"value": "cell 5 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod4_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 5"
+				"value": "cell 6 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod5_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 5"
+				"value": "cell 7 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod6_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 5"
+				"value": "cell 8 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod7_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 5"
+				"value": "cell 9 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod8_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 5"
+				"value": "cell 10 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod9_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 5"
+				"value": "cell 11 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod10_1"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 5"
+				"value": "cell 12 5"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHod2Hrac2"
@@ -268,47 +269,47 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod22"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 6"
+				"value": "cell 4 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod3_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 6"
+				"value": "cell 5 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod4_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 6"
+				"value": "cell 6 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod5_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 6"
+				"value": "cell 7 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod6_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 6"
+				"value": "cell 8 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod7_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 6"
+				"value": "cell 9 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod8_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 6"
+				"value": "cell 10 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod9_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 6"
+				"value": "cell 11 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_hod10_2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 6"
+				"value": "cell 12 6"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabSkore2"
@@ -324,64 +325,141 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H2"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 3 7"
+				"value": "cell 4 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H3"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 7"
+				"value": "cell 5 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H4"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 5 7"
+				"value": "cell 6 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H5"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 6 7"
+				"value": "cell 7 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H6"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 7 7"
+				"value": "cell 8 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H7"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 8 7"
+				"value": "cell 9 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H8"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 9 7"
+				"value": "cell 10 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H9"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 10 7"
+				"value": "cell 11 7"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabHrac2_Skore_H10"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 11 7"
+				"value": "cell 12 7"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labObrazek"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 8"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka10"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 14 11"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"background": new java.awt.Color( 0, 51, 153, 255 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnHazejPriStisku", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 12 4 5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka4"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 12 12"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka2"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 9 13"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka9"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 14 13"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka1"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 7 14"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka5"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 12 14"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka3"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 9 15"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka8"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 14 15"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka6"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 12 16"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabKuzelka7"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 14 17"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabPrubezneSkore"
+				"text": "Průběžné skóre"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 18"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabPrubezneSkoreHrac1"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 18"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabDvojtecka"
+				"text": ":"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 18"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "LabPrubezneSkoreHrac2"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 18"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "LabKdoHraje"
 				"text": "Hází první hráč"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 20"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "Házej"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnHazejPriStisku", true ) )
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 4 21"
+				"value": "cell 1 20 5 1"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 5, 5 )
-			"size": new java.awt.Dimension( 430, 605 )
+			"size": new java.awt.Dimension( 820, 895 )
 		} )
 	}
 }
