@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.List;
 import javax.imageio.*;
 import javax.swing.*;
+import javax.swing.border.*;
 import net.miginfocom.swing.*;
 import net.sevecek.util.*;
 
@@ -32,8 +33,8 @@ public class HlavniOkno extends JFrame {
     JLabel LabHrac1_hod2_2;
     JLabel LabHrac1_hod3_2;
     JLabel LagHrac1_hod4_2;
-    JLabel LagHrac1_hod5_2;
-    JLabel LagHrac1_hod6_2;     
+    JLabel LagHrac1_hod5_2;                           
+    JLabel LagHrac1_hod6_2;
     JLabel LagHrac1_hod7_2;
     JLabel LagHrac1_hod8_2;
     JLabel LagHrac1_hod9_2;
@@ -84,6 +85,7 @@ public class HlavniOkno extends JFrame {
     JLabel LabHrac2_Skore_H9;
     JLabel LabHrac2_Skore_H10;
     JLabel labObrazek;
+    JButton BtnPostavKuzelky;
     JLabel LabKuzelka10;
     JButton button1;
     JLabel LabKuzelka4;
@@ -127,7 +129,7 @@ public class HlavniOkno extends JFrame {
         kuzelkyList.add(LabKuzelka9);
         kuzelkyList.add(LabKuzelka10);
 
-
+        // pozadí bowlingu, upravit podmínku při shození 10 kuželek, zmenšit kouli
 
     }
 
@@ -154,8 +156,42 @@ public class HlavniOkno extends JFrame {
             obrazek = ImageIO.read(zdrojObrazku);
 
             for (int i = 0; i <hrac1.getHod2(); i++) {
+                kuzelkyList.get(hrac1.getHod1()+i).setIcon(new ImageIcon(obrazek));
+                kuzelkyList.get(hrac1.getHod1()+i).setMinimumSize(new Dimension(obrazek.getWidth(), obrazek.getHeight()));
+            }
+
+        } catch (IOException ex) {
+            throw new ApplicationPublicException(ex, "Nepodařilo se nahrát zabudovaný obrázek mandaly:\n\n" + ex.getMessage());
+        }
+
+
+    }
+
+    private void zhodKuzelkyHrac2Pokus1(){
+        try {
+            InputStream zdrojObrazku = getClass().getResourceAsStream("/cz/czechitas/bowling_JFrame/zhozenaKuzelka.jpg");
+            obrazek = ImageIO.read(zdrojObrazku);
+
+            for (int i = 0; i <hrac2.getHod1(); i++) {
                 kuzelkyList.get(i).setIcon(new ImageIcon(obrazek));
                 kuzelkyList.get(i).setMinimumSize(new Dimension(obrazek.getWidth(), obrazek.getHeight()));
+            }
+
+        } catch (IOException ex) {
+            throw new ApplicationPublicException(ex, "Nepodařilo se nahrát zabudovaný obrázek mandaly:\n\n" + ex.getMessage());
+        }
+
+
+    }
+
+    private void zhodKuzelkyHrac2Pokus2(){
+        try {
+            InputStream zdrojObrazku = getClass().getResourceAsStream("/cz/czechitas/bowling_JFrame/zhozenaKuzelka.jpg");
+            obrazek = ImageIO.read(zdrojObrazku);
+
+            for (int i = 0; i <hrac2.getHod2(); i++) {
+                kuzelkyList.get(hrac2.getHod1()+i).setIcon(new ImageIcon(obrazek));
+                kuzelkyList.get(hrac2.getHod1()+i).setMinimumSize(new Dimension(obrazek.getWidth(), obrazek.getHeight()));
             }
 
         } catch (IOException ex) {
@@ -230,6 +266,7 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac1_hod1_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LabHrac1_hod1_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             LabHrac1_Skore_H1.setText(Integer.toString(hrac1.getSkore()));
@@ -239,11 +276,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod1_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod1_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod1_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod1_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -254,12 +293,14 @@ public class HlavniOkno extends JFrame {
         //hod2
         else if (LabHrac1_hod2_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
+            zhodKuzelkyHrac1Pokus1();
 
             LabHrac1_hod2_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac1_hod2_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LabHrac1_hod2_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             LabHrac1_Skore_H2.setText(Integer.toString(hrac1.getSkore()));
@@ -269,11 +310,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod2_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod2_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod22.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod22.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -284,12 +327,13 @@ public class HlavniOkno extends JFrame {
         //hod3
         else if (LabHrac1_hod3_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LabHrac1_hod3_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac1_hod3_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LabHrac1_hod3_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -299,11 +343,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod3_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod3_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod3_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod3_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -314,12 +360,13 @@ public class HlavniOkno extends JFrame {
         //hod4
         else if (LagHrac1_hod4_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod4_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod4_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod4_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -329,11 +376,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod4_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod4_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod4_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod4_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -344,12 +393,13 @@ public class HlavniOkno extends JFrame {
         //hod5
         else if (LagHrac1_hod5_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod5_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod5_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod5_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -359,11 +409,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod5_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod5_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod5_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod5_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -374,12 +426,13 @@ public class HlavniOkno extends JFrame {
         //hod6
         else if (LagHrac1_hod6_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod6_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod6_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod6_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -389,11 +442,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod6_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod6_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod6_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod6_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -404,12 +459,13 @@ public class HlavniOkno extends JFrame {
         //hod7
         else if (LagHrac1_hod7_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod7_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod7_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod7_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -419,11 +475,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod7_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod7_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod7_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod7_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -434,12 +492,13 @@ public class HlavniOkno extends JFrame {
         //hod8
         else if (LagHrac1_hod8_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod8_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod8_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod8_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -449,11 +508,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod8_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod8_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod8_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod8_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -463,13 +524,14 @@ public class HlavniOkno extends JFrame {
         }
         //hod9
         else if (LagHrac1_hod9_1.getText().isEmpty()){
-
+            hrac1.haziPrvniHod();
             zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod9_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod9_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod9_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -479,11 +541,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod9_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod9_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod9_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod9_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             celkoveSkoreHrac2 = celkoveSkoreHrac2 + hrac2.getSkore();
@@ -494,12 +558,13 @@ public class HlavniOkno extends JFrame {
         //hod10
         else if (LagHrac1_hod10_1.getText().isEmpty()){
             hrac1.haziPrvniHod();
-
+            zhodKuzelkyHrac1Pokus1();
             LagHrac1_hod10_1.setText(Integer.toString(hrac1.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LagHrac1_hod10_2.getText().isEmpty()){
             hrac1.haziDruhyHod();
+            zhodKuzelkyHrac1Pokus2();
             LagHrac1_hod10_2.setText(Integer.toString(hrac1.getHod2()));
             hrac1.vypoctiSkorePoHodech();
             celkoveSkoreHrac1 = celkoveSkoreHrac1 + hrac1.getSkore();
@@ -509,11 +574,13 @@ public class HlavniOkno extends JFrame {
 
         }else if (LabHrac2_hod10_1.getText().isEmpty()){
             hrac2.haziPrvniHod();
+            zhodKuzelkyHrac2Pokus1();
             LabHrac2_hod10_1.setText(Integer.toString(hrac2.getHod1()));
             LabKdoHraje.setText("Házej znovu");
 
         }else if (LabHrac2_hod10_2.getText().isEmpty()){
             hrac2.haziDruhyHod();
+            zhodKuzelkyHrac2Pokus2();
             LabHrac2_hod10_2.setText(Integer.toString(hrac2.getHod2()));
             hrac2.vypoctiSkorePoHodech();
             LabHrac2_Skore_H10.setText(Integer.toString(hrac2.getSkore()));
@@ -523,11 +590,12 @@ public class HlavniOkno extends JFrame {
 
             LabKdoHraje.setText("Konec hry");
         }
+        
 
+    }
 
-
-
-
+    private void priStiskuPostavKuzelky(MouseEvent e) {
+        nahrajObrazekKuzelek();
     }
 
     private void initComponents() {
@@ -602,6 +670,7 @@ public class HlavniOkno extends JFrame {
         LabHrac2_Skore_H9 = new JLabel();
         LabHrac2_Skore_H10 = new JLabel();
         labObrazek = new JLabel();
+        BtnPostavKuzelky = new JButton();
         LabKuzelka10 = new JLabel();
         button1 = new JButton();
         LabKuzelka4 = new JLabel();
@@ -763,6 +832,17 @@ public class HlavniOkno extends JFrame {
         contentPane.add(LabHrac2_Skore_H9, "cell 11 7");
         contentPane.add(LabHrac2_Skore_H10, "cell 12 7");
         contentPane.add(labObrazek, "cell 2 8");
+
+        //---- BtnPostavKuzelky ----
+        BtnPostavKuzelky.setText("Postav kuzelky");
+        BtnPostavKuzelky.setBorder(new BevelBorder(BevelBorder.RAISED));
+        BtnPostavKuzelky.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                priStiskuPostavKuzelky(e);
+            }
+        });
+        contentPane.add(BtnPostavKuzelky, "cell 1 9");
         contentPane.add(LabKuzelka10, "cell 14 11");
 
         //---- button1 ----

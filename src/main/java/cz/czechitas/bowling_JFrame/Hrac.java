@@ -11,7 +11,7 @@ public class Hrac {
     public void haziPrvniHod() {
         setPocetKuzelek();
         Random random = new Random();
-        hod1 = random.nextInt(13);
+        hod1 = random.nextInt(11);
         pocetKuzelek = pocetKuzelek - hod1;
     }
 
@@ -43,7 +43,7 @@ public class Hrac {
 
     public void vypoctiSkorePoHodech() {
         skore = hod1 + hod2;
-        if(skore>=12){
+        if(skore>=10){
             skore = skore*2;
         }
     }
@@ -53,7 +53,7 @@ public class Hrac {
     }
 
     public int setPocetKuzelek(){
-        return pocetKuzelek=12;
+        return pocetKuzelek=10;
     }
 }
 
